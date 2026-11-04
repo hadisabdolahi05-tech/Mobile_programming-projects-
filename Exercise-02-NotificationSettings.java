@@ -1,0 +1,51 @@
+
+import java.util.Scanner;
+
+public class NotificationSettings {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        boolean notifications = true;
+
+        System.out.println("===== Notification Settings =====");
+        System.out.println("1. Enable Notifications");
+        System.out.println("2. Disable Notifications");
+        System.out.println("3. Show Notification Status");
+        System.out.println("4. Restore Default Settings");
+
+        System.out.print("Enter your choice: ");
+        int choice = input.nextInt();
+
+        switch (choice) {
+
+            case 1:
+                notifications = true;
+                System.out.println("Notifications enabled.");
+                break;
+
+            case 2:
+                notifications = false;
+                System.out.println("Notifications disabled.");
+                break;
+
+            case 3:
+                if (notifications) {
+                    System.out.println("Notifications are ON.");
+                } else {
+                    System.out.println("Notifications are OFF.");
+                }
+                break;
+
+            case 4:
+                notifications = true;
+                System.out.println("Default settings restored.");
+                break;
+
+            default:
+                System.out.println("Invalid option!");
+        }
+
+        input.close();
+    }
+}
